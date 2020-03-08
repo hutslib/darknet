@@ -1,6 +1,5 @@
 classes= 1
-train  = /home/hts/darknet/training/train_set.txt
-valid  = /home/hts/darknet/training/test_set.txt 
+train  = /home/hts/darknet/training/path/train_set.txt
+valid  = /home/hts/darknet/training/path/test_set.txt 
 names = /home/hts/darknet/data/voc.names
-backup = /home/hts/darknet/backup
-
+backup = /home/hts/Documents/darknet_backup
