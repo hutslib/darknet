@@ -147,7 +147,7 @@ endif
 	```
 2. 安装labelImg，安装完labelImg后，在labelImg/data/predefined_classes.txt中写入label的类别
 
-	因为电脑上有qt5所以只能用python3 + qt5 版本否则会报错，RuntimeError: the PyQt4.QtCore and PyQt5.QtCore modules both wrap the QObject class，这个错误的原因是qt4 也有qt5， 解决办法是使用python3 + qt5， 或者卸载qt5， 但我卸载qt5 的时候ros相关的半夜会卸载掉，所以选择使用python3+qt5)
+	因为电脑上有qt5所以只能用python3 + qt5 版本否则会报错，RuntimeError: the PyQt4.QtCore and PyQt5.QtCore modules both wrap the QObject class，这个错误的原因是qt4 也有qt5， 解决办法是使用python3 + qt5， 或者卸载qt5， 但我卸载qt5 的时候ros相关的包也会卸载掉，所以选择使用python3+qt5)
 	```
 	# python3+qt5 
     sudo apt-get install pyqt5-dev-tools
@@ -158,7 +158,7 @@ endif
 	```
 3. labelImg 的使用（具体可参考labelImg的README，我觉得README里面写的很好了）
 	更改 Open Dir 为 /darknet/training/image
-	更改 Change Save Dir 为 /darknet/training/image
+	更改 Change Save Dir 为 /darknet/training/label
 	将软件默认的Pascal/VOC更改为YOLO
 	点击Create\nRectBox 圈出待标注物体, 输入类别标签后保存
 	通过Next Image 和 Prev Image 来更换图片
@@ -169,6 +169,7 @@ endif
 	python pick_train&test_jpg.py
 	```
 ## · 训练
+0. 在训练前要把/darknet/training/label/文件夹下面的所有文件拷贝到/darknet/training/image/文件夹下面
 1.  官网参考教程: https://pjreddie.com/darknet/yolov2/
 	```
 	cd darknet
