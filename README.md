@@ -141,7 +141,7 @@ endif
 	num：每个grid预测的BoundingBox个数 
 	```
 ## · labelImg制作自己的数据集
-0. 从视频获取图片，我上传了代码在我的github上面
+0. 从视频获取图片，我上传了代码在我的github上面（在/darknet/scripts文件夹里）
 	```
 	python getframe.py --video_path ~/darknet/video/IMG_1547.avi --save_path ~/darknet/training/image
 	```
@@ -164,7 +164,7 @@ endif
 	通过Next Image 和 Prev Image 来更换图片
     快捷键参考README
 ## · 划分训练集与测试集
-1. 写了一个代码在我的github上面，需要修改路径
+1. 写了一个代码在我的github上面(/darknet/scripts/文件夹里)，需要修改路径
 	```
 	python pick_train&test_jpg.py
 	```
@@ -179,7 +179,7 @@ endif
 	./darknet detector train cfg/voc.data cfg/yolov2-voc.cfg backup/yolov2-voc.backup
 	```
 ## · 测试训练模型
-1.  在我的github上面增添了检测的一些api可以根据需要调用，文件名为darknet_api.py，
+1.  在我的github上面增添了检测的一些api可以根据需要调用（/darknet/python文件夹里），文件名为darknet_api.py，
 	```
 	#注意修改lib = CDLL("~/darknet/libdarknet.so", RTLD_GLOBAL)
 	#    def __init__(self, img_path, cfg_path = '~/darknet/cfg/yolov2-voc.cfg', weight_path = '~/Documents/darknet_backup/yolov2-voc_900.weights', meta_path = '~/darknet/cfg/voc.data'):
