@@ -31,18 +31,26 @@ result.dtypes
 #绘制IOU
 fig_IOU = plt.figure()
 ax_IOU = fig.add_subplot(1, 1, 1)
-ax_IOU.plot(result['Region Avg IOU'].values,label='Region Avg IOU')
+ax_IOU.plot(result['Avg IOU'].values,label='Avg IOU')
 ax_IOU.legend(loc='best')
-ax_IOU.set_title('The Region Avg IOU curves')
+ax_IOU.set_title('The Avg IOU curves')
 ax_IOU.set_xlabel('batches')
 fig_IOU.savefig('Region Avg IOU')
-ax.plot(result['Class'].values,label='Class')
-ax.plot(result['Obj'].values,label='Obj')
-ax.plot(result['No Obj'].values,label='No Obj')
-ax.plot(result['Avg Recall'].values,label='Avg Recall')
-ax.plot(result['count'].values,label='count')
 
+#绘制Avg Recall
+fig_IOU = plt.figure()
+ax_IOU = fig.add_subplot(1, 1, 1)
+ax_IOU.plot(result['Avg Recall'].values,label=''Avg Recall'')
+ax_IOU.legend(loc='best')
+ax_IOU.set_title('The 'Avg Recall' curves')
+ax_IOU.set_xlabel('batches')
+fig_IOU.savefig(''Avg Recall'')
+
+# ax.plot(result['Class'].values,label='Class')
+# ax.plot(result['Obj'].values,label='Obj')
+# ax.plot(result['No Obj'].values,label='No Obj')
+# ax.plot(result['Avg Recall'].values,label='Avg Recall')
+# ax.plot(result['count'].values,label='count')
 #ax.set_title('The Region Avg IOU curves')
-
 #fig.savefig('Avg IOU')
 
