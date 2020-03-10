@@ -11,6 +11,7 @@
     - [· 训练](#·-训练)
     - [· 测试训练模型](#·-测试训练模型)
     - [· 训练过程中的输出参数含义](#·-训练过程中的输出参数含义)
+    - [可视化训练的log](#可视化训练的log)
 - [Darknet](#darknet)
 
 <!-- /TOC -->
@@ -224,6 +225,28 @@ Class| 标注物体分类的正确率越接近1越好
 Obj|越接近1越好
 No Obj|越小越好，但不为0
 Avg Recall|在所有subdivision图片中检测出的正样本与实际的正样本的比值
+
+## 可视化训练的log
+
+1. 首先运行在/darknet/scripts/文件加下面的extract_log.py文件，更改路径
+	```
+	python extract_log.py
+	```
+2. 运行train_loss_visualization.py文件，修改代码中的部分内容
+	```
+	# 修改内容
+	lines =80200 //修改为刚刚生成的person_train_log_loss.txt文件的行数
+	pd.read_csv('/home/hts/darknet/person_train_log_loss.txt', skiprows=[x for x in range(lines) if ((x%10!=9) |(x<30000)| (x>40000))]  ,
+                    error_bad_lines=False, names=['loss', 'avg', 'rate', 'seconds', 'images'])
+	//修改路径
+	skiprows=[x for x in range(lines) if ((x%10!=9) |(x<30000)| (x>40000))] //修改为作图需要的数据，xrange为[0,lines-1]，我选取的是30000-40000次的数据每十次取结果作图
+	```
+3. 运行train_iou_visualization.py文件，修改代码中的内容
+	```
+	#修改内容
+	lines =80200
+	修改路径和作图需要的数据，同上
+	```
 
 ![Darknet Logo](http://pjreddie.com/media/files/darknet-black-small.png)
 
